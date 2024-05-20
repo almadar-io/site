@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography, Box, Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import SectionServices from "../OrbitalServicesPage/Sections/SectionServices";
-import SectionWork from "../OrbitalHomePage/Sections/SectionWork";
-import SectionTeam from "../OrbitalAboutPage/Sections/SectionTeam";
-import SectionTestimonials from "../OrbitalHomePage/Sections/SectionTestimonials";
-import OrbitalProductItems from "../OrbitalProductPage/OrbitalProductItems";
 import { Transition } from "react-transition-group";
-import "./OrbitalHomePage.css";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -139,49 +132,41 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           </Grid>
         </Grid>
       </Box>
-      <div className={classNames(classes.main)}>
-        <div className={classes.container}>
+      <div className={classes.main}>
+        <Container>
           <div id="about-us">
-            <SectionTeam />
+            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
+              About Us
+            </Typography>
+            <Typography variant="body1" className={classes.description}>
+              {/* Add your content for the About Us section here */}
+            </Typography>
           </div>
           <div id="services">
-            <SectionServices />
+            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
+              Services
+            </Typography>
+            <Typography variant="body1" className={classes.description}>
+              {/* Add your content for the Services section here */}
+            </Typography>
           </div>
-          {/* <div id="demos">
-            <Grid container>
-              <Grid item md={8} sm={8} className={classes.textCenter}>
-                <Typography
-                  variant="h3"
-                  component="h3"
-                  className={classes.sectionTitle}
-                >
-                  Demos
-                </Typography>
-                <h5 className={classes.description}>
-                  Check out some of the demos we have put together.
-                </h5>
-              </Grid>
-            </Grid>
-            <OrbitalProductItems {...rest} />
-          </div> */}
           <div id="clients">
-            <Grid container>
-              <Grid item md={8} sm={8} className={classes.textCenter}>
-                <Typography
-                  variant="h3"
-                  component="h3"
-                  className={classes.sectionTitle}
-                >
-                  Past Clients
-                </Typography>
-              </Grid>
-            </Grid>
-            <SectionTestimonials />
+            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
+              Past Clients
+            </Typography>
+            <Typography variant="body1" className={classes.description}>
+              {/* Add your content for the Clients section here */}
+            </Typography>
           </div>
           <div id="contact-us">
-            <SectionWork onContactUs={onContactUs} />
+            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
+              Contact Us
+            </Typography>
+            <Typography variant="body1" className={classes.description}>
+              {/* Add your content for the Contact Us section here */}
+            </Typography>
           </div>
-        </div>
+        </Container>
       </div>
     </div>
   );
