@@ -6,7 +6,7 @@ import config from "Config";
 const logo =
   "https://orbital-clients.s3.amazonaws.com/_Main/Markab-logo-only.svg";
 import offlineStorage from "./OfflineStorage/OfflineStorage";
-import { Crud, Notification } from "@markab.io/react";
+import { Notification } from "@markab.io/react";
 import rootStore from "./Store/rootStore";
 import Portfolio from "./Portfolio/Portfolio";
 class App extends React.Component {

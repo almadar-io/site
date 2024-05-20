@@ -10,3 +10,6 @@
 [submodule "src/Libs/orbital-templates/src/Libs/orbital-templates"]
 	path = src/Libs/orbital-templates/src/Libs/orbital-templates
 	url = https://github.com/markab-io/orbital-templates
+[submodule "orbital-templates"]
+	path = orbital-templates
+	url = https://github.com/markab-io/orbital-templates
