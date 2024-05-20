@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound/NotFound";
-import "Templates/_shared/material-kit-pro-react-v1.7.0/src/assets/scss/material-kit-pro-react.scss?v=1.7.0";
 import { routeList } from "./Routes";
 import config from "Config";
 const logo =
