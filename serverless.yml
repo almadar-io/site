@@ -18,17 +18,18 @@ plugins:
 
 resources:
   Resources:
-    WebsiteBucketPolicy:
-      Type: AWS::S3::BucketPolicy
-      Properties:
-        Bucket: ${self:custom.client.bucketName}
-        PolicyDocument:
-          Version: "2012-10-17"
-          Statement:
-            - Effect: Allow
-              Principal: "*"
-              Action: "s3:GetObject"
-              Resource: "arn:aws:s3:::${self:custom.client.bucketName}/*"
+    # Remove the WebsiteBucketPolicy resource to avoid duplication error
+    # WebsiteBucketPolicy:
+    #   Type: AWS::S3::BucketPolicy
+    #   Properties:
+    #     Bucket: ${self:custom.client.bucketName}
+    #     PolicyDocument:
+    #       Version: "2012-10-17"
+    #       Statement:
+    #         - Effect: Allow
+    #           Principal: "*"
+    #           Action: "s3:GetObject"
+    #           Resource: "arn:aws:s3:::${self:custom.client.bucketName}/*"
 
     CloudFrontDistribution:
       Type: AWS::CloudFront::Distribution
