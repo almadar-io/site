@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imageBox: {
     display: "flex",
+    padding: theme.spacing(6),
     alignItems: "center",
     justifyContent: "center",
   },
@@ -117,7 +118,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
         </Toolbar>
       </AppBar>
       <div className={classes.sideline}></div>
-      <HeroSection></HeroSection>
+      <HeroSection onCta={handleContactUs}></HeroSection>
       <Container className={classes.main}>
         <div className={classes.section}>
           <Typography
