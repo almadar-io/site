@@ -20,6 +20,16 @@ const useStyles = makeStyles((theme) => ({
     height: 50,
     marginRight: theme.spacing(1),
   },
+  sideline: {
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    width: '100px', // Adjust width as needed
+    height: '100%',
+    background: "url('/images/sideline.webp') no-repeat center center",
+    backgroundSize: 'cover',
+    zIndex: 10,
+  },
   container: {
     zIndex: 1,
     paddingTop: "20vh",
@@ -36,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
   main: {
     backgroundColor: "#ffffff", // White background for content
     padding: theme.spacing(4),
+    marginLeft: '100px', // Adjust for the width of the sideline
   },
   section: {
     padding: theme.spacing(6, 0),
@@ -60,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
   imageBox: {
     display: "flex",
     alignItems: "center",
-
     justifyContent: "center",
   },
   image: {
@@ -106,6 +116,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           </div>
         </Toolbar>
       </AppBar>
+      <div className={classes.sideline}></div>
       <HeroSection></HeroSection>
       <Container className={classes.main}>
         <div className={classes.section}>
