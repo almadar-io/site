@@ -10,14 +10,14 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(2)/2,
+    marginRight: theme.spacing(2),
   },
   container: {
     zIndex: 1,
     paddingTop: "20vh",
     textAlign: "center",
     color: theme.palette.secondary.main,
-    backgroundImage: "url('https://orbital-clients.s3.amazonaws.com/_Main/background.jpg')",
+    backgroundImage: "url('/images/markab-background.webp')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     paddingBottom: "10vh",
@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.main,
     padding: theme.spacing(3),
+    marginTop: theme.spacing(4),
     textAlign: 'center',
   },
   footerLogo: {
