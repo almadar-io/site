@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   sideline: {
     position: "fixed",
     top: 0,
-    right: 0,
+    right: "-45px",
     width: "100px", // Adjust width as needed
     height: "100%",
     background: "url('/images/sideline.webp') no-repeat center center",
