@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.main,
     padding: theme.spacing(3),
-    marginTop: theme.spacing(4),
     textAlign: 'center',
   },
   footerLogo: {
