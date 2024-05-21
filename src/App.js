@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
   imageBox: {
     display: "flex",
     alignItems: "center",
+
     justifyContent: "center",
   },
   image: {
@@ -84,6 +85,10 @@ const useStyles = makeStyles((theme) => ({
 
 const OrbitalHomePage = ({ onContactUs, ...rest }) => {
   const classes = useStyles();
+  const handleContactUs = () => {
+    window.location.href = "mailto:oalghanmi@markab.io";
+  };
+
   return (
     <div>
       <AppBar position="fixed" className={classes.appBar}>
@@ -134,7 +139,11 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
                   efficient and scalable applications.
                 </Typography>
                 <Box className={classes.callToAction}>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleContactUs}
+                  >
                     Learn More About Us
                   </Button>
                 </Box>
@@ -164,21 +173,13 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
               <Box className={classes.contentBox}>
                 <Typography variant="body1" className={classes.description}>
                   Interested in working with us? We’d love to hear from you!
-                  Reach out to us at:
-                  <br />
-                  <br />
-                  <strong>Email:</strong> contact@markab.io
-                  <br />
-                  <strong>Phone:</strong> (123) 456-7890
-                  <br />
-                  <strong>Address:</strong> 123 Software Lane, Tech City, TX
-                  12345
+                  Reach out to us via the button below:
                 </Typography>
                 <Box className={classes.callToAction}>
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={onContactUs}
+                    onClick={handleContactUs}
                   >
                     Get in Touch
                   </Button>
