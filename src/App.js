@@ -21,13 +21,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
   },
   sideline: {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     right: 0,
-    width: '100px', // Adjust width as needed
-    height: '100%',
+    width: "100px", // Adjust width as needed
+    height: "100%",
     background: "url('/images/sideline.webp') no-repeat center center",
-    backgroundSize: 'cover',
+    backgroundSize: "cover",
     zIndex: 0,
   },
   container: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   main: {
     backgroundColor: "#FFFEF8", // White background for content
     padding: theme.spacing(4),
-    marginLeft: '100px', // Adjust for the width of the sideline
+    marginLeft: "100px", // Adjust for the width of the sideline
   },
   section: {
     padding: theme.spacing(6, 0),
@@ -101,7 +101,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
   };
 
   return (
-    <div style={{backgroundColor:"#FFFEF8"}}>
+    <div style={{ backgroundColor: "#FFFEF8" }}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <img
@@ -141,14 +141,16 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
             <Grid item xs={12} md={6}>
               <Box className={classes.contentBox}>
                 <Typography variant="body1" className={classes.description}>
-                  Markab.io is a software company built on the idea of the
-                  scientific method. We are a developer-first company. Our main
-                  focus is the developer, which in turn can have a positive
-                  impact on the customer. We have over 15 years of experience in
-                  the Software Development industry, working with a range of
-                  clients from small businesses to large enterprises. We
-                  specialize in using Node.js, React, and Python to build
-                  efficient and scalable applications.
+                  We are a software company rooted in the principles of the
+                  scientific method. As a developer-first organization, our
+                  primary focus is on empowering developers. With over 15 years
+                  of experience in the Software Development industry, we have
+                  successfully partnered with a diverse range of clients, from
+                  startups to large enterprises. We are experts in building efficient and scalable
+                  applications tailored to meet the unique needs of each
+                  project. At Markab.io, we are committed to innovation and
+                  excellence, ensuring that our solutions drive success for our
+                  clients and make a lasting impact in the tech world.
                 </Typography>
                 <Box className={classes.callToAction}>
                   <Button
@@ -185,7 +187,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
               <Box className={classes.contentBox}>
                 <Typography variant="body1" className={classes.description}>
                   Interested in working with us? We’d love to hear from you!
-                  Reach out to us via the button below:
+                  Reach out to us!
                 </Typography>
                 <Box className={classes.callToAction}>
                   <Button
