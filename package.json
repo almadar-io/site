@@ -15,12 +15,18 @@
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
-    "normalize.css": "^8.0.1",
     "@babel/core": "^7.18.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.0",
+    "@babel/plugin-transform-runtime": "^7.18.0",
     "@babel/preset-env": "^7.18.0",
     "@babel/preset-react": "^7.18.0",
-    "@babel/plugin-proposal-class-properties": "^7.18.0",
-    "@babel/plugin-transform-runtime": "^7.18.0"
+    "normalize.css": "^8.0.1",
+    "serverless": "^3.38.0",
+    "serverless-apig-s3": "^2.0.0",
+    "serverless-finch": "^4.0.4",
+    "serverless-http": "^3.2.0",
+    "serverless-offline": "^13.5.0",
+    "serverless-single-page-app-plugin": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

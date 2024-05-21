@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1)/2,
   },
   container: {
     zIndex: 1,
