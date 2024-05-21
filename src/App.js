@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     background: "url('/images/sideline.webp') no-repeat center center",
     backgroundSize: 'cover',
-    zIndex: 10,
+    zIndex: 0,
   },
   container: {
     zIndex: 1,
@@ -101,7 +101,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor:"#FFFEF8"}}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <img
