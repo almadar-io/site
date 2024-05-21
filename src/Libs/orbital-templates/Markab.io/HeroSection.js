@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headline: {
     color: "#fff",
-    textShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
+    textShadow: "4px 1px BLACK",
     padding: theme.spacing(2),
   },
 }));
@@ -28,9 +28,8 @@ const HeroSection = () => {
     <div className={classes.root}>
       <Typography variant="h2" className={classes.headline}>
         Empowering Developers.
-      </Typography>
-      <div></div>
-      <Typography variant="h2" className={classes.headline}>
+        <br></br>
+        <br></br>
         Scaling with AI.
       </Typography>
     </div>

@@ -113,6 +113,15 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
+              <Box className={classes.imageBox}>
+                <img
+                  src="/images/about-section.webp" // Replace with actual image
+                  alt="About Us"
+                  className={classes.image}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
               <Box className={classes.contentBox}>
                 <Typography variant="body1" className={classes.description}>
                   Markab.io is a software company built on the idea of the
@@ -129,15 +138,6 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
                     Learn More About Us
                   </Button>
                 </Box>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box className={classes.imageBox}>
-                <img
-                  src="/images/about-section.webp" // Replace with actual image
-                  alt="About Us"
-                  className={classes.image}
-                />
               </Box>
             </Grid>
           </Grid>
