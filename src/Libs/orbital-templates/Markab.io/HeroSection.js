@@ -17,19 +17,25 @@ const useStyles = makeStyles((theme) => ({
   },
   headline: {
     color: theme.palette.primary.main,
+    fontWeight: "bold",
     padding: theme.spacing(2),
   },
+  dev:{
+    color: theme.palette.secondary.secondary,
+  },
+  ai:{
+    color: theme.palette.secondary.secondary,
+  }
 }));
 
 const HeroSection = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography variant="h2" className={classes.headline}>
-        Empowering Developers.
+      <Typography variant="h3" component="p" className={classes.headline}>
+        Empowering <span className={classes.dev}>Developers.</span>
         <br></br>
-        <br></br>
-        Scaling with AI.
+        Scaling with <span className={classes.ai}>AI.</span>
       </Typography>
     </div>
   );

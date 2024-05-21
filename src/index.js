@@ -14,7 +14,8 @@ const theme = createTheme({
       main: "#07182D", // Navy blue
     },
     secondary: {
-      main: "#FFFFFF", // White
+      main: "#FFFEF8", // Light gold
+      secondary: "#B8860B" //make me dark gold color
     },
   },
 });
