@@ -13,7 +13,7 @@ const theme = createTheme({
       main: "#07182D", // Navy blue
     },
     secondary: {
-      main: "#c0c0c0", // Silver
+      main: "#FFFFFF", // White
     },
   },
 });

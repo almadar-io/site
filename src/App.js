@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
     backgroundImage: "url('/images/markab-background.webp')",
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "top",
     paddingBottom: "10vh",
     [theme.breakpoints.down("sm")]: {
       paddingTop: "30vh",
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(4),
   },
   sectionTitle: {
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(4),
     color: theme.palette.primary.main,
   },
   description: {
@@ -125,10 +125,10 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
       <Box className={classes.container}>
         <Grid container justifyContent="center">
           <Grid item sm={10} md={10}>
-            <Typography variant="h2" component="h2" sx={{ fontWeight: "bold" }}>
+            <Typography className={classes.sectionTitle} variant="h2" component="h2" sx={{ fontWeight: "bold" }}>
               Let's build you a full stack app in a few days
             </Typography>
-            <h3 style={{ minHeight: "50px" }}>
+            <Typography className={classes.sectionTitle} variant="h5" component="h3" style={{ minHeight: "50px" }}>
               <span>
                 {characters.map((char, index) => {
                   const duration = DURATION * index;
@@ -152,7 +152,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
                   );
                 })}
               </span>
-            </h3>
+            </Typography>
             <br />
           </Grid>
         </Grid>
