@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(1)/2,
+    marginRight: theme.spacing(2),
   },
   container: {
     zIndex: 1,
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     backgroundColor: "#ffffff", // White background for content
-    padding: theme.spacing(4),
   },
   sectionTitle: {
     marginBottom: theme.spacing(4),
@@ -183,6 +182,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
               Markab.io is a software company built on the idea of the scientific method. We are a developer-first company. 
               Our main focus is the developer, which in turn can have a positive impact on the customer.
               We have over 15 years of experience in the Software Development industry, working with a range of clients from small businesses to large enterprises.
+              We specialize in using Node.js, React, and Python to build efficient and scalable applications.
             </Typography>
           </div>
           <div id="services">
@@ -192,7 +192,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
             <Typography variant="body1" className={classes.description}>
               At Markab.io, we offer a variety of services tailored to meet your software development needs. Our primary focus is on:
               <ul>
-                <li>Full stack application development</li>
+                <li>Full stack application development using Node.js, React, and Python</li>
                 <li>AI knowledge management tools</li>
                 <li>Custom software solutions</li>
                 <li>Consulting and strategy planning</li>
