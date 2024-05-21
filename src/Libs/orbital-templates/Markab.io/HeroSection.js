@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: "#fff",
     height: "100vh",
-    backgroundImage: `url(/images/hero-circle.webp)`,
+    backgroundColor: "#FFFEF8",
     backgroundSize: "cover",
     backgroundPosition: "center",
     display: "flex",
@@ -16,8 +16,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   headline: {
-    color: "#fff",
-    textShadow: "4px 1px BLACK",
+    color: theme.palette.primary.main,
     padding: theme.spacing(2),
   },
 }));

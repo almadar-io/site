@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   main: {
-    backgroundColor: "#ffffff", // White background for content
+    backgroundColor: "#FFFEF8", // White background for content
     padding: theme.spacing(4),
     marginLeft: '100px', // Adjust for the width of the sideline
   },
