@@ -18,6 +18,18 @@ plugins:
 
 resources:
   Resources:
+    WebsiteBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: ${self:custom.client.bucketName}
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal: "*"
+              Action: "s3:GetObject"
+              Resource: "arn:aws:s3:::${self:custom.client.bucketName}/*"
+
     CloudFrontDistribution:
       Type: AWS::CloudFront::Distribution
       Properties:
@@ -41,11 +53,13 @@ resources:
               QueryString: false
               Cookies:
                 Forward: none
-            ViewerProtocolPolicy: allow-all
-          # Remove the Aliases property to avoid domain linking
-          # Aliases:
-          #   - markab.io
-          #   - www.markab.io
+            ViewerProtocolPolicy: redirect-to-https
+          Aliases:
+            - markab.io
+            - www.markab.io
+          ViewerCertificate:
+            AcmCertificateArn: arn:aws:acm:us-east-1:035958020148:certificate/86aa4fb3-418f-4c02-9cf7-fdb5139ee530
+            SslSupportMethod: sni-only
           DefaultRootObject: index.html
           PriceClass: PriceClass_100
           Restrictions:
