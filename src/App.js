@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {
   AppBar,
   Toolbar,
-  Grid,
   Typography,
-  Box,
   Container,
+  Grid,
+  Box,
+  Button,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Transition } from "react-transition-group";
+import HeroSection from "Libs/orbital-templates/Markab.io/HeroSection";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(1)/2,
+    marginRight: theme.spacing(1) / 2,
   },
   container: {
     zIndex: 1,
@@ -34,19 +35,36 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     backgroundColor: "#ffffff", // White background for content
+    padding: theme.spacing(4),
   },
-  section:{
-    padding: theme.spacing(6),
-    [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(4),
-    },
+  section: {
+    padding: theme.spacing(6, 0),
   },
   sectionTitle: {
     marginBottom: theme.spacing(4),
     color: "#07182D", // Dark blue color for titles
+    textAlign: "center",
   },
   description: {
     color: "#07182D", // Dark blue color for text
+    marginBottom: theme.spacing(2),
+  },
+  contentBox: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    padding: theme.spacing(6),
+    textAlign: "left",
+  },
+  imageBox: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: "100%",
+    height: "auto",
   },
   footer: {
     backgroundColor: "#07182D", // Dark blue footer
@@ -58,86 +76,14 @@ const useStyles = makeStyles((theme) => ({
     height: 30,
     marginBottom: theme.spacing(1),
   },
-  mobileMenuIcon: {
-    marginLeft: "auto",
-  },
-  navLinks: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: theme.spacing(2),
-  },
-  navLink: {
-    color: "#ffffff",
-    textDecoration: "none",
-    fontSize: "1.2rem",
+  callToAction: {
+    marginTop: theme.spacing(4),
+    textAlign: "center",
   },
 }));
 
-const DURATION = 80;
-
-const Fade = ({
-  in: inProp,
-  children,
-  transitionStyles,
-  defaultStyle,
-  duration,
-  onState,
-}) => (
-  <Transition in={inProp} timeout={duration}>
-    {(state) => {
-      onState(state);
-      return (
-        <span
-          style={{
-            ...defaultStyle,
-            ...transitionStyles[state],
-          }}
-        >
-          {children}
-        </span>
-      );
-    }}
-  </Transition>
-);
-
 const OrbitalHomePage = ({ onContactUs, ...rest }) => {
   const classes = useStyles();
-  const [visibleIndex, setVisibleIndex] = useState(0);
-  const [inProp, setInProp] = useState(false);
-  const words = [
-    "Harness the power of AI to build scalable, robust applications.",
-    "Our developer-first approach ensures you get top-tier, efficient solutions.",
-    "Transform your ideas into reality with our cutting-edge technology.",
-    "Partner with Markab and experience unparalleled innovation and scalability.",
-  ];
-  const transitionStyles = {
-    entering: { opacity: 0, display: "none" },
-    entered: { opacity: 1, display: "inline" },
-    exiting: { opacity: 0, display: "none" },
-    exited: { opacity: 0, display: "none" },
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    setTimeout(() => setInProp(true), 100);
-    const timer = setTimeout(
-      () => incrementWord(),
-      DURATION * (words[visibleIndex].split("").length - 1) + 1000
-    );
-
-    return () => clearTimeout(timer);
-  }, [visibleIndex]);
-
-  const incrementWord = () => {
-    setInProp(false);
-    setTimeout(() => setInProp(true), 100);
-    setVisibleIndex(visibleIndex === words.length - 1 ? 0 : visibleIndex + 1);
-  };
-
-  const characters = words[visibleIndex].split("");
-
   return (
     <div>
       <AppBar position="fixed" className={classes.appBar}>
@@ -155,51 +101,8 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           </div>
         </Toolbar>
       </AppBar>
-      <Box className={classes.container}>
-        <Grid container justifyContent="center">
-          <Grid item xs={10}>
-            <Typography
-              className={classes.sectionTitle}
-              variant="h2"
-              component="h2"
-              sx={{ fontWeight: "bold" }}
-            >
-              Empowering Developers, Scaling with AI
-            </Typography>
-            <Typography
-              className={classes.sectionTitle}
-              variant="h5"
-              component="h5"
-              style={{ minHeight: "50px" }}
-            >
-              <span>
-                {characters.map((char, index) => {
-                  const duration = DURATION * index;
-                  const defaultStyle = {
-                    transition: `opacity ${duration}ms ease-in-out`,
-                    opacity: 0,
-                  };
-                  return (
-                    <Fade
-                      key={index}
-                      onState={(state) => {
-                        index === characters.length - 1 && state === "entered";
-                      }}
-                      defaultStyle={defaultStyle}
-                      duration={duration}
-                      transitionStyles={transitionStyles}
-                      in={inProp}
-                    >
-                      {char}
-                    </Fade>
-                  );
-                })}
-              </span>
-            </Typography>
-          </Grid>
-        </Grid>
-      </Box>
-      <div className={classes.main}>
+      <HeroSection></HeroSection>
+      <Container className={classes.main}>
         <div className={classes.section}>
           <Typography
             variant="h3"
@@ -208,57 +111,36 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           >
             About Us
           </Typography>
-          <Typography variant="body1" className={classes.description}>
-            Markab.io is a software company built on the idea of the scientific
-            method. We are a developer-first company. Our main focus is the
-            developer, which in turn can have a positive impact on the customer.
-            We have over 15 years of experience in the Software Development
-            industry, working with a range of clients from small businesses to
-            large enterprises. We specialize in using Node.js, React, and Python
-            to build efficient and scalable applications.
-          </Typography>
-        </div>
-        <div className={classes.section}>
-          <Typography
-            variant="h3"
-            component="h3"
-            className={classes.sectionTitle}
-          >
-            Services
-          </Typography>
-          <Typography variant="body1" className={classes.description}>
-            At Markab.io, we offer a variety of services tailored to meet your
-            software development needs. Our primary focus is on:
-            <ul>
-              <li>
-                Full stack application development using Node.js, React, and
-                Python
-              </li>
-              <li>AI knowledge management tools</li>
-              <li>Custom software solutions</li>
-              <li>Consulting and strategy planning</li>
-            </ul>
-          </Typography>
-        </div>
-        <div className={classes.section}>
-          <Typography
-            variant="h3"
-            component="h3"
-            className={classes.sectionTitle}
-          >
-            Past Clients
-          </Typography>
-          <Typography variant="body1" className={classes.description}>
-            Our clients range from small businesses to enterprise-level
-            organizations. We take pride in delivering high-quality solutions
-            that meet the unique needs of each client. Some of our notable
-            clients include:
-            <ul>
-              <li>Small Tech Startups</li>
-              <li>Mid-sized Businesses</li>
-              <li>Large Enterprises</li>
-            </ul>
-          </Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Box className={classes.contentBox}>
+                <Typography variant="body1" className={classes.description}>
+                  Markab.io is a software company built on the idea of the
+                  scientific method. We are a developer-first company. Our main
+                  focus is the developer, which in turn can have a positive
+                  impact on the customer. We have over 15 years of experience in
+                  the Software Development industry, working with a range of
+                  clients from small businesses to large enterprises. We
+                  specialize in using Node.js, React, and Python to build
+                  efficient and scalable applications.
+                </Typography>
+                <Box className={classes.callToAction}>
+                  <Button variant="contained" color="primary">
+                    Learn More About Us
+                  </Button>
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box className={classes.imageBox}>
+                <img
+                  src="/images/about-section.webp" // Replace with actual image
+                  alt="About Us"
+                  className={classes.image}
+                />
+              </Box>
+            </Grid>
+          </Grid>
         </div>
         <div className={classes.section}>
           <Typography
@@ -268,29 +150,54 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           >
             Contact Us
           </Typography>
-          <Typography variant="body1" className={classes.description}>
-            Interested in working with us? We’d love to hear from you! Reach out
-            to us at:
-            <br />
-            <br />
-            <strong>Email:</strong> contact@markab.io
-            <br />
-            <strong>Phone:</strong> (123) 456-7890
-            <br />
-            <strong>Address:</strong> 123 Software Lane, Tech City, TX 12345
-          </Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Box className={classes.imageBox}>
+                <img
+                  src="/images/contact-section.webp" // Replace with actual image
+                  alt="Contact Us"
+                  className={classes.image}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box className={classes.contentBox}>
+                <Typography variant="body1" className={classes.description}>
+                  Interested in working with us? We’d love to hear from you!
+                  Reach out to us at:
+                  <br />
+                  <br />
+                  <strong>Email:</strong> contact@markab.io
+                  <br />
+                  <strong>Phone:</strong> (123) 456-7890
+                  <br />
+                  <strong>Address:</strong> 123 Software Lane, Tech City, TX
+                  12345
+                </Typography>
+                <Box className={classes.callToAction}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={onContactUs}
+                  >
+                    Get in Touch
+                  </Button>
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
         </div>
-        <footer className={classes.footer}>
-          <img
-            src="/images/markab.io.webp"
-            alt="Markab.io logo"
-            className={classes.footerLogo}
-          />
-          <Typography variant="body2">
-            © {new Date().getFullYear()} Markab.io. All rights reserved.
-          </Typography>
-        </footer>
-      </div>
+      </Container>
+      <footer className={classes.footer}>
+        <img
+          src="/images/markab.io.webp"
+          alt="Markab.io logo"
+          className={classes.footerLogo}
+        />
+        <Typography variant="body2">
+          © {new Date().getFullYear()} Markab.io. All rights reserved.
+        </Typography>
+      </footer>
     </div>
   );
 };
