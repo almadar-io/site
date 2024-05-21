@@ -2,8 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Provider } from "react-redux";
-import store from "./Store/index";
 import App from "./App";
 
 const theme = createTheme({
@@ -12,23 +10,21 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#0b1e43",
+      main: "#0b1e43", // Navy blue
     },
     secondary: {
-      main: "#ffffff",
+      main: "#c0c0c0", // Silver
     },
   },
 });
 
 const MyApp = (props) => (
   <Router>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path="/*" element={<App {...props} />} />
-        </Routes>
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Routes>
+        <Route path="/*" element={<App {...props} />} />
+      </Routes>
+    </ThemeProvider>
   </Router>
 );
 

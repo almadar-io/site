@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography, Box, Container } from "@mui/material";
+import { AppBar, Toolbar, Grid, Typography, Box, Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Transition } from "react-transition-group";
 
 const useStyles = makeStyles((theme) => ({
+  appBar: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  logo: {
+    height: 50,
+    marginRight: theme.spacing(2),
+  },
   container: {
     zIndex: 1,
     paddingTop: "20vh",
@@ -97,6 +104,14 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
 
   return (
     <div>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <img src="/images/markab-logo.webp" alt="Markab.io logo" className={classes.logo} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Markab
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <Box className={classes.container}>
         <Grid container justifyContent="center">
           <Grid item sm={10} md={10}>
