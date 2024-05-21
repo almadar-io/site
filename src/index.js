@@ -10,7 +10,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#0b1e43", // Navy blue
+      main: "#07182D", // Navy blue
     },
     secondary: {
       main: "#c0c0c0", // Silver

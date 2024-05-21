@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)/2,
   },
   container: {
     zIndex: 1,
@@ -36,6 +36,16 @@ const useStyles = makeStyles((theme) => ({
   description: {
     color: theme.palette.primary.main,
   },
+  footer: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
+    padding: theme.spacing(3),
+    textAlign: 'center',
+  },
+  footerLogo: {
+    height: 30,
+    marginBottom: theme.spacing(1),
+  }
 }));
 
 const DURATION = 80;
@@ -106,7 +116,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
     <div>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <img src="/images/markab-logo.webp" alt="Markab.io logo" className={classes.logo} />
+          <img src="/images/markab.io.webp" alt="Markab.io logo" className={classes.logo} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Markab
           </Typography>
@@ -183,6 +193,14 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
           </div>
         </Container>
       </div>
+      <footer className={classes.footer}>
+        <Container maxWidth="lg">
+          <img src="/images/markab.io.webp" alt="Markab.io logo" className={classes.footerLogo} />
+          <Typography variant="body2">
+            © {new Date().getFullYear()} Markab.io. All rights reserved.
+          </Typography>
+        </Container>
+      </footer>
     </div>
   );
 };
