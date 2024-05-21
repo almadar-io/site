@@ -106,10 +106,10 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
   const [visibleIndex, setVisibleIndex] = useState(0);
   const [inProp, setInProp] = useState(false);
   const words = [
-    "Don't spend so much just to get your first prototype out.",
-    "Test your idea without writing code.",
-    "Test your idea without having to pay tens of thousands of dollars.",
-    "Test your idea without having to wait three months.",
+    "Harness the power of AI to build scalable, robust applications.",
+    "Our developer-first approach ensures you get top-tier, efficient solutions.",
+    "Transform your ideas into reality with our cutting-edge technology.",
+    "Partner with Markab and experience unparalleled innovation and scalability.",
   ];
   const transitionStyles = {
     entering: { opacity: 0, display: "none" },
@@ -164,7 +164,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
               component="h2"
               sx={{ fontWeight: "bold" }}
             >
-              Let's build you a full stack app in a few days
+              Empowering Developers, Scaling with AI
             </Typography>
             <Typography
               className={classes.sectionTitle}
