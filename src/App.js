@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(1) / 2,
+    marginRight: theme.spacing(1),
   },
   container: {
     zIndex: 1,
@@ -94,7 +94,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <img
-            src="/images/markab.io.webp"
+            src="/images/markab-logo.png"
             alt="Markab.io logo"
             className={classes.logo}
           />
