@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { AppBar, Toolbar, Grid, Typography, Box, Container } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Grid,
+  Typography,
+  Box,
+  Container,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Transition } from "react-transition-group";
 
@@ -30,35 +37,35 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionTitle: {
     marginBottom: theme.spacing(4),
-    color: "#001f3f", // Dark blue color for titles
+    color: "#07182D", // Dark blue color for titles
   },
   description: {
-    color: "#001f3f", // Dark blue color for text
+    color: "#07182D", // Dark blue color for text
   },
   footer: {
     backgroundColor: "#001f3f", // Dark blue footer
     color: "#ffffff", // White text color for footer
     padding: theme.spacing(3),
-    textAlign: 'center',
+    textAlign: "center",
   },
   footerLogo: {
     height: 30,
     marginBottom: theme.spacing(1),
   },
   mobileMenuIcon: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
   },
   navLinks: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     gap: theme.spacing(2),
   },
   navLink: {
-    color: '#ffffff',
-    textDecoration: 'none',
-    fontSize: '1.2rem',
-  }
+    color: "#ffffff",
+    textDecoration: "none",
+    fontSize: "1.2rem",
+  },
 }));
 
 const DURATION = 80;
@@ -129,7 +136,11 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
     <div>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <img src="/images/markab.io.webp" alt="Markab.io logo" className={classes.logo} />
+          <img
+            src="/images/markab.io.webp"
+            alt="Markab.io logo"
+            className={classes.logo}
+          />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Markab
           </Typography>
@@ -141,10 +152,20 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
       <Box className={classes.container}>
         <Grid container justifyContent="center">
           <Grid item xs={10}>
-            <Typography className={classes.sectionTitle} variant="h2" component="h2" sx={{ fontWeight: "bold" }}>
+            <Typography
+              className={classes.sectionTitle}
+              variant="h2"
+              component="h2"
+              sx={{ fontWeight: "bold" }}
+            >
               Let's build you a full stack app in a few days
             </Typography>
-            <Typography className={classes.sectionTitle} variant="h5" component="h3" style={{ minHeight: "50px" }}>
+            <Typography
+              className={classes.sectionTitle}
+              variant="h5"
+              component="h5"
+              style={{ minHeight: "50px" }}
+            >
               <span>
                 {characters.map((char, index) => {
                   const duration = DURATION * index;
@@ -173,69 +194,95 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
         </Grid>
       </Box>
       <div className={classes.main}>
-        <Container>
-          <div id="about-us">
-            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
-              About Us
-            </Typography>
-            <Typography variant="body1" className={classes.description}>
-              Markab.io is a software company built on the idea of the scientific method. We are a developer-first company. 
-              Our main focus is the developer, which in turn can have a positive impact on the customer.
-              We have over 15 years of experience in the Software Development industry, working with a range of clients from small businesses to large enterprises.
-              We specialize in using Node.js, React, and Python to build efficient and scalable applications.
-            </Typography>
-          </div>
-          <div id="services">
-            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
-              Services
-            </Typography>
-            <Typography variant="body1" className={classes.description}>
-              At Markab.io, we offer a variety of services tailored to meet your software development needs. Our primary focus is on:
-              <ul>
-                <li>Full stack application development using Node.js, React, and Python</li>
-                <li>AI knowledge management tools</li>
-                <li>Custom software solutions</li>
-                <li>Consulting and strategy planning</li>
-              </ul>
-            </Typography>
-          </div>
-          <div id="clients">
-            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
-              Past Clients
-            </Typography>
-            <Typography variant="body1" className={classes.description}>
-              Our clients range from small businesses to enterprise-level organizations. We take pride in delivering high-quality solutions that meet the unique needs of each client. 
-              Some of our notable clients include:
-              <ul>
-                <li>Small Tech Startups</li>
-                <li>Mid-sized Businesses</li>
-                <li>Large Enterprises</li>
-              </ul>
-            </Typography>
-          </div>
-          <div id="contact-us">
-            <Typography variant="h3" component="h3" className={classes.sectionTitle}>
-              Contact Us
-            </Typography>
-            <Typography variant="body1" className={classes.description}>
-              Interested in working with us? We’d love to hear from you! Reach out to us at:
-              <br /><br />
-              <strong>Email:</strong> contact@markab.io
-              <br />
-              <strong>Phone:</strong> (123) 456-7890
-              <br />
-              <strong>Address:</strong> 123 Software Lane, Tech City, TX 12345
-            </Typography>
-          </div>
-        </Container>
+        <div className={classes.section}>
+          <Typography
+            variant="h3"
+            component="h3"
+            className={classes.sectionTitle}
+          >
+            About Us
+          </Typography>
+          <Typography variant="body1" className={classes.description}>
+            Markab.io is a software company built on the idea of the scientific
+            method. We are a developer-first company. Our main focus is the
+            developer, which in turn can have a positive impact on the customer.
+            We have over 15 years of experience in the Software Development
+            industry, working with a range of clients from small businesses to
+            large enterprises. We specialize in using Node.js, React, and Python
+            to build efficient and scalable applications.
+          </Typography>
+        </div>
+        <div className={classes.section}></div>
+        <Typography
+          variant="h3"
+          component="h3"
+          className={classes.sectionTitle}
+        >
+          Services
+        </Typography>
+        <Typography variant="body1" className={classes.description}>
+          At Markab.io, we offer a variety of services tailored to meet your
+          software development needs. Our primary focus is on:
+          <ul>
+            <li>
+              Full stack application development using Node.js, React, and
+              Python
+            </li>
+            <li>AI knowledge management tools</li>
+            <li>Custom software solutions</li>
+            <li>Consulting and strategy planning</li>
+          </ul>
+        </Typography>
+      </div>
+      <div className={classes.section}>
+        <Typography
+          variant="h3"
+          component="h3"
+          className={classes.sectionTitle}
+        >
+          Past Clients
+        </Typography>
+        <Typography variant="body1" className={classes.description}>
+          Our clients range from small businesses to enterprise-level
+          organizations. We take pride in delivering high-quality solutions that
+          meet the unique needs of each client. Some of our notable clients
+          include:
+          <ul>
+            <li>Small Tech Startups</li>
+            <li>Mid-sized Businesses</li>
+            <li>Large Enterprises</li>
+          </ul>
+        </Typography>
+      </div>
+      <div className={classes.section}>
+        <Typography
+          variant="h3"
+          component="h3"
+          className={classes.sectionTitle}
+        >
+          Contact Us
+        </Typography>
+        <Typography variant="body1" className={classes.description}>
+          Interested in working with us? We’d love to hear from you! Reach out
+          to us at:
+          <br />
+          <br />
+          <strong>Email:</strong> contact@markab.io
+          <br />
+          <strong>Phone:</strong> (123) 456-7890
+          <br />
+          <strong>Address:</strong> 123 Software Lane, Tech City, TX 12345
+        </Typography>
       </div>
       <footer className={classes.footer}>
-        <Container maxWidth="lg">
-          <img src="/images/markab.io.webp" alt="Markab.io logo" className={classes.footerLogo} />
-          <Typography variant="body2">
-            © {new Date().getFullYear()} Markab.io. All rights reserved.
-          </Typography>
-        </Container>
+        <img
+          src="/images/markab.io.webp"
+          alt="Markab.io logo"
+          className={classes.footerLogo}
+        />
+        <Typography variant="body2">
+          © {new Date().getFullYear()} Markab.io. All rights reserved.
+        </Typography>
       </footer>
     </div>
   );
