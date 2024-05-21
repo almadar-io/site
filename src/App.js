@@ -10,14 +10,14 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 50,
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1)/2,
   },
   container: {
     zIndex: 1,
     paddingTop: "20vh",
     textAlign: "center",
     color: "#ffffff", // White text color
-    backgroundImage: "url('/images/new-hero-image.jpg')", // Update with the new hero image
+    backgroundImage: "url('/images/markab-background.webp')", // Update with the new hero image
     backgroundSize: "cover",
     backgroundPosition: "center",
     paddingBottom: "10vh",
