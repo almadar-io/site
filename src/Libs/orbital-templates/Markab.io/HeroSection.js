@@ -38,7 +38,7 @@ const HeroSection = ({onCta}) => {
   return (
     <>
       <div className={classes.root}>
-        <Typography variant="h3" component="p" className={classes.headline}>
+        <Typography style={{fontWeight:"400"}} variant="h2" component="p" className={classes.headline}>
           Empowering <span className={classes.dev}>Developers.</span>
           <br />
           Scaling with <span className={classes.ai}>AI.</span>
