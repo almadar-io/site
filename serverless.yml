@@ -1,15 +1,80 @@
 org: itechdom
 app: markab-io 
-service: markab  # This names your service
+service: markab
+
 provider:
   name: aws
-  runtime: nodejs20.x  # Assuming you're using Node.js 14.x
+  runtime: nodejs20.x
   region: us-east-1
+
 custom:
   client:
-    bucketName: markab-io-frontend
+    bucketName: markab-io-site
     distributionFolder: build 
 
 plugins:
   - serverless-finch
   - serverless-single-page-app-plugin
+
+resources:
+  Resources:
+    WebsiteBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.client.bucketName}
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+    BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: { Ref: WebsiteBucket }
+        PolicyDocument:
+          Statement:
+            - Effect: Allow
+              Principal: '*'
+              Action:
+                - s3:GetObject
+              Resource: arn:aws:s3:::${self:custom.client.bucketName}/*
+
+    CloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Enabled: true
+          Origins:
+            - DomainName: ${self:custom.client.bucketName}.s3.amazonaws.com
+              Id: S3-${self:custom.client.bucketName}
+              S3OriginConfig:
+                OriginAccessIdentity: ''
+          DefaultCacheBehavior:
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
+            CachedMethods:
+              - GET
+              - HEAD
+            TargetOriginId: S3-${self:custom.client.bucketName}
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          DefaultRootObject: index.html
+          PriceClass: PriceClass_100
+          ViewerCertificate:
+            CloudFrontDefaultCertificate: true
+          Restrictions:
+            GeoRestriction:
+              RestrictionType: none
+
+  Outputs:
+    CloudFrontDistributionId:
+      Value: !Ref CloudFrontDistribution
+      Export:
+        Name: CloudFrontDistributionId
+    CloudFrontDistributionDomainName:
+      Value: !GetAtt CloudFrontDistribution.DomainName
+      Export:
+        Name: CloudFrontDistributionDomainName
