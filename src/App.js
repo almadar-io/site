@@ -10,7 +10,7 @@ import {
   Button,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import HeroSection from "Libs/orbital-templates/almadar.io/HeroSection";
+import HeroSection from "Libs/orbital-templates/almadar/HeroSection";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

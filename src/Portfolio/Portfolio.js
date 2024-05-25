@@ -14,7 +14,7 @@ import MainWrapper from "Templates/Wrappers/MainWrapper";
 // import OrbitalChat from "./OrbitalProductPage/Sections/OrbitalChat";
 // import OrbitalCMS from "./OrbitalProductPage/Sections/OrbitalCMS";
 // import OrbitalEcommerce from "./OrbitalProductPage/Sections/OrbitalEcommerce";
-// import { Socket } from "../@almadar.io/react";
+// import { Socket } from "../@almadar/react";
 // import { Crud } from "../../../../orbital-react-services/crud-service/crud-service-mst";
 // import Chat from "../../OrbitalChat/Chat/Chat.js";
 
