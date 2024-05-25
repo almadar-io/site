@@ -7,7 +7,7 @@ const words = [
   "Harness the power of AI to build scalable, robust applications.",
   "Our developer-first approach ensures you get top-tier, efficient solutions.",
   "Transform your ideas into reality with our cutting-edge technology.",
-  "Partner with Markab and experience unparalleled innovation and scalability.",
+  "Partner with almadar and experience unparalleled innovation and scalability.",
 ];
 const transitionStyles = {
   entering: { opacity: 0, display: "none" },

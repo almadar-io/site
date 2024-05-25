@@ -10,7 +10,7 @@ import {
   Button,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import HeroSection from "Libs/orbital-templates/Markab.io/HeroSection";
+import HeroSection from "Libs/orbital-templates/almadar.io/HeroSection";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "20vh",
     textAlign: "center",
     color: "#ffffff", // White text color
-    backgroundImage: "url('/images/markab-background.webp')", // Update with the new hero image
+    backgroundImage: "url('/images/almadar-background.webp')", // Update with the new hero image
     backgroundSize: "cover",
     backgroundPosition: "center",
     paddingBottom: "10vh",
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
 const OrbitalHomePage = ({ onContactUs, ...rest }) => {
   const classes = useStyles();
   const handleContactUs = () => {
-    window.location.href = "mailto:oalghanmi@markab.io";
+    window.location.href = "mailto:oalghanmi@almadar.io";
   };
 
   return (
@@ -105,12 +105,12 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <img
-            src="/images/markab-logo.png"
-            alt="Markab.io logo"
+            src="/images/almadar-logo-orbital.webp"
+            alt="almadar.io logo"
             className={classes.logo}
           />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Markab
+            almadar
           </Typography>
           <div className={classes.mobileMenuIcon}>
             {/* You can add a menu icon here for mobile navigation */}
@@ -148,7 +148,7 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
                   successfully partnered with a diverse range of clients, from
                   startups to large enterprises. We are experts in building efficient and scalable
                   applications tailored to meet the unique needs of each
-                  project. At Markab.io, we are committed to innovation and
+                  project. At almadar.io, we are committed to innovation and
                   excellence, ensuring that our solutions drive success for our
                   clients and make a lasting impact in the tech world.
                 </Typography>
@@ -205,12 +205,12 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
       </Container>
       <footer className={classes.footer}>
         <img
-          src="/images/markab.io.webp"
-          alt="Markab.io logo"
+          src="/images/almadar.io.webp"
+          alt="almadar.io logo"
           className={classes.footerLogo}
         />
         <Typography variant="body2">
-          © {new Date().getFullYear()} Markab.io. All rights reserved.
+          © {new Date().getFullYear()} almadar.io. All rights reserved.
         </Typography>
       </footer>
     </div>

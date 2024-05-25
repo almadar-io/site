@@ -51,7 +51,7 @@ class SectionWork extends React.Component {
             <h4 className={classes.description}>
               Email us at
               <span> </span>
-              <a href="mailto:samalghanmi@markab.io">samalghanmi@markab.io</a>
+              <a href="mailto:samalghanmi@almadar.io">samalghanmi@almadar.io</a>
             </h4>
             <form>
               <GridContainer>

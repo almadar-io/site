@@ -1,5 +1,5 @@
 {
-  "name": "@markab.io/orbital-templates",
+  "name": "@almadar.io/orbital-templates",
   "version": "10.0.0",
   "description": "themes for orbital apps",
   "main": "Template.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markab-io/orbital-templates.git"
+    "url": "git+https://github.com/almadar-io/orbital-templates.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/markab-io/orbital-templates/issues"
+    "url": "https://github.com/almadar-io/orbital-templates/issues"
   },
-  "homepage": "https://github.com/markab-io/orbital-templates#readme"
+  "homepage": "https://github.com/almadar-io/orbital-templates#readme"
 }

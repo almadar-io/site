@@ -110,7 +110,7 @@ function MySnackbarContent(props) {
           <Icon className={classNames(classes.icon, classes.iconVariant)} />
           {typeof message === "string"
             ? message
-            : "Error! Please contact support at samalghanmi@markab.io, Error code: 001"}
+            : "Error! Please contact support at samalghanmi@almadar.io, Error code: 001"}
         </span>
       }
       position={"bottom-right"}

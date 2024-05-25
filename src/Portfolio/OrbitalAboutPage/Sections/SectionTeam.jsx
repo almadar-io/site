@@ -55,7 +55,7 @@ class SectionTeam extends React.Component {
           That is exactly why our goal is to help take your vision from concept
           to reality by allowing you to test out prototypes quickly and
           iteratively. We know that can be a tedious, slow and costly process,
-          but we believe it shouldn't be that way. Markab wants simplify the
+          but we believe it shouldn't be that way. almadar wants simplify the
           process for you, optimizing the testing and development phases, while
           facilitating experimentation so that you can achieve the best product
           quickly and efficiently. With more than a decade of experience serving
@@ -66,7 +66,7 @@ class SectionTeam extends React.Component {
           We are not just any development agency. Our clients are supported by a
           team of experienced and dedicated senior software developers, product
           managers and designers who share a passion for great ideas and
-          harnessing cutting-edge technology to achieve them. At Markab we are
+          harnessing cutting-edge technology to achieve them. At almadar we are
           obsessed with learning and finding ways to make things work better,
           keeping us ahead of the curve every step of the way and always able to
           anticipate our clients' needs. We specialize in building

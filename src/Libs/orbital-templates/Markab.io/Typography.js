@@ -20,7 +20,7 @@ const TypographyExample = () => (
   <ThemeProvider theme={theme}>
     <Box sx={{ backgroundColor: theme.palette.primary.main, padding: 2 }}>
       <Typography variant="h1" sx={{ color: theme.palette.secondary.main }}>
-        Markab
+        almadar
       </Typography>
       <Typography variant="body1" sx={{ color: theme.palette.secondary.main }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
