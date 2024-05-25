@@ -105,8 +105,8 @@ const OrbitalHomePage = ({ onContactUs, ...rest }) => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <img
-            src="/images/almadar-logo-orbital.webp"
-            alt="almadar.io logo"
+            src="/images/almadar-logo.webp"
+            alt="almadar logo"
             className={classes.logo}
           />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
