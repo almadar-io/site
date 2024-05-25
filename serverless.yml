@@ -1,6 +1,6 @@
 org: itechdom
-app: almadar 
-service: almadar-site 
+app: markab-io 
+service: markab
 
 provider:
   name: aws
@@ -9,7 +9,7 @@ provider:
 
 custom:
   client:
-    bucketName: almadar-io-frontend
+    bucketName: markab-io-frontend
     distributionFolder: build 
 
 plugins:
@@ -43,8 +43,8 @@ resources:
                 Forward: none
             ViewerProtocolPolicy: redirect-to-https
           Aliases:
-            - almadar.io
-            - www.almadar.io
+            - markab.io
+            - www.markab.io
           ViewerCertificate:
             AcmCertificateArn: arn:aws:acm:us-east-1:035958020148:certificate/86aa4fb3-418f-4c02-9cf7-fdb5139ee530
             SslSupportMethod: sni-only
